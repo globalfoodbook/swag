@@ -59,7 +59,11 @@ if [ -d "${PROJECT_DIR}" ]; then
     cd ${PROJECT_DIR} && go get github.com/tools/godep && godep restore && go install
 
     echo -e "**** Start gfb service api ***"
-    cp -R /go/src/${GO_WORKSPACE}/${PROJECT_NAME}/docs/ /go/bin/
+    # if  [[ ! -L "/go/bin/docs" || ! -f "/go/bin/docs" ]]; then
+    if  [[ -L "/go/bin/docs" || -f "/go/bin/docs" ]]; then
+      sudo rm /go/bin/docs
+    fi
+    ln -s /go/src/${GO_WORKSPACE}/${PROJECT_NAME}/docs/ /go/bin/
     PORT=${SWAG_PORT} /go/bin/${PROJECT_NAME} &
   fi
 fi
