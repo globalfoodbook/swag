@@ -9,10 +9,10 @@ This container best suites development purposes.
 This is a sample Swagger docker container used to test GFB's installation on [http://www.globalfoodbook.com](http://www.globalfoodbook.com)
 
 
-To build this swagger server run the following command:
+To build this swag server run the following command:
 
 ```bash
-$ docker pull globalfoodbook/swagger
+$ docker pull globalfoodbook/swag
 ```
 
 This will run on a internal default port of 80.
@@ -20,7 +20,7 @@ This will run on a internal default port of 80.
 To run the server on the host machine, run the following command:
 
 ```bash
-$ docker run --name=swagger --detach=true swagger
+$ docker run --name=swag --detach=true swag
 
 ```
 
